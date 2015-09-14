@@ -1,6 +1,6 @@
-# tlshttp
+# httpsock
 
-`tlshttp` is an effort to implement a socket that uses HTTP requests as a transport. The socket implementation should be good enough that TLS could be tunneled over HTTP.
+`httpsock` is a (hairbrained?) effort to implement a socket that uses HTTP requests as a transport. The socket implementation should be good enough that TLS could be tunneled over HTTP.
 
 ## HTTPS?
 
@@ -9,6 +9,10 @@ HTTPS is HTTP over TLS. This is TLS over HTTP. The other way around.
 ## Are you kidding!?
 
 At this point, I'm not sure. Maybe. Maybe not.
+
+A serious use of this might be to replace websockets and/or HTTP/2 streams from behind proxies that don't support them.
+
+It may be nessesary to provide additional security on top of an existing secure channel for networks that implement SSL man-in-the-middle.
 
 # Protocol
 
