@@ -6,6 +6,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	"io"
+	"log"
 	"net"
 	"net/http"
 	"net/url"
@@ -225,6 +226,7 @@ func (l *Listener) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		l.newSessions <- s
 
 		w.Header().Add("X-Session", fmt.Sprintf("%x", s.ID))
+		log.Printf("SESSION %x", s.ID)
 		w.WriteHeader(http.StatusCreated)
 		return
 	}
